@@ -1,10 +1,14 @@
 import sys
 import aubio
-#from aubio import source, onset
+# from aubio import source, onset
 
 global output_file
-#global onset_method, sourcemode_name, samplemode, samplemode_name, silence, threshold, onset_division
-#global sourceSlice, output_file, start, end, filename, output_file, sound_tail
+output_file = None
+
+__all__ = ['aubio']
+
+# global onset_method, sourcemode_name, samplemode, samplemode_name, silence, threshold, onset_division
+# global sourceSlice, output_file, start, end, filename, output_file, sound_tail
 
 sound_tail = [
     '\t\t\t<lfo1 type="triangle" syncLevel="0" />',
@@ -99,8 +103,13 @@ sound_tail = [
     '\t\t</sound>'
 ]
 
-def main ():
 
+def main():
+    process_file(output_file)
+    sys.exit(0)
+
+
+def process_file(out_file):
     win_s = 512  # fft size
     hop_s = win_s // 2  # hop size
 
@@ -115,7 +124,7 @@ def main ():
     onset_division = 0
     silence = -70.0
     threshold = 0.3
-    sourceSlice = 'none'
+    sourceslice = 'none'
 
     sample_modes = {
         'CUT': 0,
@@ -178,11 +187,10 @@ def main ():
         '</kit>'
     ]
 
-
     method_list = ['default', 'energy', 'hfc', 'complex', 'phase', 'specdiff', 'kl', 'mkl', 'specflux', 'divide']
 
     if len(sys.argv) < 2:
-        print ("""
+        print("""
         
 DELUGE SAMPLE 'SLICER' V0.30 by Neil Baldwin
 --------------------------------------------
@@ -261,9 +269,9 @@ OPTIONS TO OUTPUT WHOLE SAMPLE AS EXTRA SLICE:
             threshold = sys.argv[arg + 1]
 
         if sys.argv[arg] == '--sourceSlice':
-            sourceSlice = str.lower(sys.argv[arg + 1])
-            if sourceSlice != 'first':
-                sourceSlice = 'last'
+            sourceslice = str.lower(sys.argv[arg + 1])
+            if sourceslice != 'first':
+                sourceslice = 'last'
         if sys.argv[arg] == '--sourceMode':
             sourcemode_name = str.upper(sys.argv[arg + 1])
             if sourcemode_name in sample_modes:
@@ -305,7 +313,8 @@ OPTIONS TO OUTPUT WHOLE SAMPLE AS EXTRA SLICE:
             if o(samples):
                 onsets.append(o.get_last())
             total_frames += read
-            if read < hop_s: break
+            if read < hop_s:
+                break
         onsets.append(total_frames)
     else:
         delta = s.duration / float(onset_division)
@@ -313,17 +322,18 @@ OPTIONS TO OUTPUT WHOLE SAMPLE AS EXTRA SLICE:
         while True:
             onsets.append(read)
             read = read + delta
-            if read >= s.duration: break
+            if read >= s.duration:
+                break
         onsets.append(read)
 
     if len(onsets) < 1:
         print("\nNo slices found with the setting you specified.\n")
         sys.exit(1)
 
-    output_file = open(kitname, "w")
-    for l in kit_head:
-        output_file.write(l)
-        output_file.write("\n")
+    out_file = open(kitname, "w")
+    for line in kit_head:
+        out_file.write(line)
+        out_file.write("\n")
 
     print("\n")
 
@@ -338,50 +348,51 @@ OPTIONS TO OUTPUT WHOLE SAMPLE AS EXTRA SLICE:
     print("Source Slice Sample Type: " + sourcemode_name)
     print("\n")
 
-    sourceStart = 0
-    sourceEnd = s.duration
-    print("Source Slice:", sourceSlice, sourceStart, sourceEnd)
+    sourcestart = 0
+    sourceend = s.duration
+    print("Source Slice:", sourceslice, sourcestart, sourceend)
 
     #
     # OUTPUT LOOP
     #
-    sliceCount = 0
-    if sourceSlice == 'first':
-        start = sourceStart
-        end = sourceEnd
-        print("Slice {}:  {} - {}".format(sliceCount, start, end))
-        write_sound(start, end, sourcemode,filename,output_file)
-        sliceCount += 1
+    slicecount = 0
+    if sourceslice == 'first':
+        start = sourcestart
+        end = sourceend
+        print("Slice {}:  {} - {}".format(slicecount, start, end))
+        write_sound(start, end, sourcemode, filename, out_file)
+        slicecount += 1
 
-    for slice in range(len(onsets) - 1):
-        start = int(onsets[slice])
-        end = int(onsets[slice + 1] - 1)
-        print("Slice {}:  {} - {}".format(sliceCount, start, end))
-        write_sound(start, end, samplemode,filename,output_file)
-        sliceCount += 1
+    for aslice in range(len(onsets) - 1):
+        start = int(onsets[aslice])
+        end = int(onsets[aslice + 1] - 1)
+        print("Slice {}:  {} - {}".format(slicecount, start, end))
+        write_sound(start, end, samplemode, filename, out_file)
+        slicecount += 1
 
-    if sourceSlice == 'last':
+    if sourceslice == 'last':
         print("LAST SLICE!!!")
-        start = sourceStart
-        end = sourceEnd
-        print("Slice {}:  {} - {}".format(sliceCount, start, end))
-        write_sound(start, end, sourcemode, filename, output_file)
-        sliceCount += 1
+        start = sourcestart
+        end = sourceend
+        print("Slice {}:  {} - {}".format(slicecount, start, end))
+        write_sound(start, end, sourcemode, filename, out_file)
+        slicecount += 1
 
-    print("\nTotal slices written to '" + kitname + "' from sample '" + filename + "': " + str(sliceCount))
+    print("\nTotal slices written to '" + kitname + "' from sample '" + filename + "': " + str(slicecount))
     print("\n")
 
-    for l in kit_tail:
-        output_file.write(l)
-        output_file.write("\n")
+    for line in kit_tail:
+        out_file.write(line)
+        out_file.write("\n")
 
-    output_file.close()
+    out_file.close()
     sys.exit()
 
+
 #
-#Function: write individual sound (kit lane) to output file
+# Function: write individual sound (kit lane) to output file
 #
-def write_sound(start, end, mode,file,output):
+def write_sound(start, end, mode, file, output):
     output.write('\t\t<sound\n')
     output.write('\t\t\tname="SL' + str(slice) + '"\n')
     output.write('\t\t\tpolyphonic="audio"\n')
@@ -410,10 +421,10 @@ def write_sound(start, end, mode,file,output):
     output.write("\t\t\t</osc2>\n")
 
     #
-    #Output 'tail' of individual sound
+    # Output 'tail' of individual sound
     #
-    for l in sound_tail:
-        output.write(l)
+    for line in sound_tail:
+        output.write(line)
         output.write("\n")
 
 
