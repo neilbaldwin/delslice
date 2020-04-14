@@ -43,7 +43,7 @@
 	</defaultParams>
 	<soundSources>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -55,7 +55,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="0"
 					endSamplePos="4967" />
@@ -158,7 +158,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -170,7 +170,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="4968"
 					endSamplePos="10108" />
@@ -273,7 +273,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -285,7 +285,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="10109"
 					endSamplePos="15075" />
@@ -388,7 +388,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -400,7 +400,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="15076"
 					endSamplePos="20257" />
@@ -503,7 +503,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -515,7 +515,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="20258"
 					endSamplePos="25388" />
@@ -618,7 +618,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -630,7 +630,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="25389"
 					endSamplePos="30516" />
@@ -733,7 +733,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -745,7 +745,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="30517"
 					endSamplePos="35547" />
@@ -848,7 +848,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -860,7 +860,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="35548"
 					endSamplePos="40260" />
@@ -963,7 +963,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -975,7 +975,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="40261"
 					endSamplePos="44986" />
@@ -1078,7 +1078,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -1090,7 +1090,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="44987"
 					endSamplePos="50921" />
@@ -1193,7 +1193,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -1205,7 +1205,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="50922"
 					endSamplePos="56259" />
@@ -1308,7 +1308,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -1320,7 +1320,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="56260"
 					endSamplePos="61153" />
@@ -1423,7 +1423,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -1435,7 +1435,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="61154"
 					endSamplePos="65379" />
@@ -1538,7 +1538,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -1550,7 +1550,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="65380"
 					endSamplePos="71168" />
@@ -1653,7 +1653,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -1665,7 +1665,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="71169"
 					endSamplePos="76645" />
@@ -1768,7 +1768,7 @@
 			</modKnobs>
 		</sound>
 		<sound
-			name="SL<class 'slice'>"
+			name="SL<type 'slice'>"
 			polyphonic="audio"
 			voicePriority="1"
 			mode="subtractive"
@@ -1780,7 +1780,7 @@
 				reversed="0"
 				timeStretchEnable="0"
 				timeStretchAmount="0"
-				fileName="">
+				fileName="v">
 				<zone
 					startSamplePos="76646"
 					endSamplePos="81296" />
