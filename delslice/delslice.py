@@ -1,14 +1,9 @@
 import sys
-import aubio
-# from aubio import source, onset
+from aubio import source as aubio_source, onset as aubio_onset
 
 global output_file
-output_file = None
 
-__all__ = ['aubio']
-
-# global onset_method, sourcemode_name, samplemode, samplemode_name, silence, threshold, onset_division
-# global sourceSlice, output_file, start, end, filename, output_file, sound_tail
+# __all__ = ['aubio']
 
 sound_tail = [
     '\t\t\t<lfo1 type="triangle" syncLevel="0" />',
@@ -105,6 +100,7 @@ sound_tail = [
 
 
 def main():
+    output_file = None
     process_file(output_file)
     sys.exit(0)
 
@@ -294,11 +290,11 @@ OPTIONS TO OUTPUT WHOLE SAMPLE AS EXTRA SLICE:
 
     # Initialisation
     samplerate = 0
-    s = aubio.source(filename, samplerate, hop_s)
+    s = aubio_source(filename, samplerate, hop_s)
     samplerate = s.samplerate
 
     # setup slice detection
-    o = aubio.onset(onset_method, win_s, hop_s, samplerate)
+    o = aubio_onset(onset_method, win_s, hop_s, samplerate)
     o.set_silence(float(silence))
     o.set_threshold(float(threshold))
 

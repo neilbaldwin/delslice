@@ -34,7 +34,7 @@ setup(
     description="Delslice",
     entry_points={
         'console_scripts': [
-            'delslice=delslice.__main__:main',
+            'delslice=delslice.delslice:main',
         ],
     },
     install_requires=requirements,
