@@ -1,5 +1,6 @@
 import sys
-from aubio import source as aubio_source, onset as aubio_onset
+from aubio import source as aubio_source
+from aubio import onset as aubio_onset
 
 global output_file
 
