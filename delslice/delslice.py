@@ -188,8 +188,8 @@ def process_file(out_file):
     if len(sys.argv) < 2:
         print("""
         
-DELUGE SAMPLE 'SLICER' V0.30 by Neil Baldwin
---------------------------------------------
+DELUGE SAMPLE 'SLICER' V0.30 by Neil Baldwin - updated 30/05/20
+---------------------------------------------------------------
 
 PLEASE NOTE THIS ONLY WORKS WITH DELUGE OS V3.0 AND ABOVE!
 
