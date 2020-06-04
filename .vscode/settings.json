@@ -1,4 +1,5 @@
 {
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/Users/neilbaldwin/Sync/Python/delslice/venv/bin/python3"
 }
