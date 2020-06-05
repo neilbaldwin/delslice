@@ -10,15 +10,15 @@ sound_tail = [
     '\t\t\t<lfo1 type="triangle" syncLevel="0" />',
     '\t\t\t<lfo2 type="triangle" />',
     '\t\t\t<unison num="1" detune="8" />',
-    '\t\t\t<compressor',
+    "\t\t\t<compressor",
     '\t\t\t\tsyncLevel="6"',
     '\t\t\t\tattack="327244"',
     '\t\t\t\trelease="936" />',
-    '\t\t\t<delay',
+    "\t\t\t<delay",
     '\t\t\t\tpingPong="1"',
     '\t\t\t\tanalog="0"',
     '\t\t\t\tsyncLevel="7" />',
-    '\t\t\t<defaultParams',
+    "\t\t\t<defaultParams",
     '\t\t\t\tarpeggiatorGate="0x00000000"',
     '\t\t\t\tportamento="0x80000000"',
     '\t\t\t\tcompressorShape="0xDC28F5B2"',
@@ -52,33 +52,33 @@ sound_tail = [
     '\t\t\t\tbitCrush="0x80000000"',
     '\t\t\t\tmodFXOffset="0x00000000"',
     '\t\t\t\tmodFXFeedback="0x00000000">',
-    '\t\t\t\t<envelope1',
+    "\t\t\t\t<envelope1",
     '\t\t\t\t\tattack="0x80000000"',
     '\t\t\t\t\tdecay="0xE6666654"',
     '\t\t\t\t\tsustain="0x7FFFFFD2"',
     '\t\t\t\t\trelease="0x80000000" />',
-    '\t\t\t\t<envelope2',
+    "\t\t\t\t<envelope2",
     '\t\t\t\t\tattack="0xE6666654"',
     '\t\t\t\t\tdecay="0xE6666654"',
     '\t\t\t\t\tsustain="0xFFFFFFE9"',
     '\t\t\t\t\trelease="0xE6666654" />',
-    '\t\t\t\t<patchCables>',
-    '\t\t\t\t\t<patchCable',
+    "\t\t\t\t<patchCables>",
+    "\t\t\t\t\t<patchCable",
     '\t\t\t\t\t\tsource="velocity"',
     '\t\t\t\t\t\tdestination="volume"',
     '\t\t\t\t\t\tamount="0x3FFFFFE8" />',
-    '\t\t\t\t</patchCables>',
-    '\t\t\t\t<equalizer',
+    "\t\t\t\t</patchCables>",
+    "\t\t\t\t<equalizer",
     '\t\t\t\t\tbass="0x00000000"',
     '\t\t\t\t\ttreble="0x00000000"',
     '\t\t\t\t\tbassFrequency="0x00000000"',
     '\t\t\t\t\ttrebleFrequency="0x00000000" />',
-    '\t\t\t</defaultParams>',
-    '\t\t\t<arpeggiator',
+    "\t\t\t</defaultParams>",
+    "\t\t\t<arpeggiator",
     '\t\t\t\tmode="off"',
     '\t\t\t\tnumOctaves="2"',
     '\t\t\t\tsyncLevel="7" />',
-    '\t\t\t<modKnobs>',
+    "\t\t\t<modKnobs>",
     '\t\t\t\t<modKnob controlsParam="pan" />',
     '\t\t\t\t<modKnob controlsParam="volumePostFX" />',
     '\t\t\t\t<modKnob controlsParam="lpfResonance" />',
@@ -95,8 +95,8 @@ sound_tail = [
     '\t\t\t\t<modKnob controlsParam="stutterRate" />',
     '\t\t\t\t<modKnob controlsParam="bitcrushAmount" />',
     '\t\t\t\t<modKnob controlsParam="sampleRateReduction" />',
-    '\t\t\t</modKnobs>',
-    '\t\t</sound>'
+    "\t\t\t</modKnobs>",
+    "\t\t</sound>",
 ]
 
 
@@ -114,40 +114,35 @@ def process_file(out_file):
     kitname = ""
 
     samplemode = 0
-    samplemode_name = 'CUT'
+    samplemode_name = "CUT"
     sourcemode = 0
-    sourcemode_name = 'NONE'
-    onset_method = 'hfc'
+    sourcemode_name = "NONE"
+    onset_method = "hfc"
     onset_division = 0
     silence = -70.0
     threshold = 0.3
-    sourceslice = 'none'
+    sourceslice = "none"
 
-    sample_modes = {
-        'CUT': 0,
-        'ONCE': 1,
-        'LOOP': 2,
-        'STRETCH': 3
-    }
+    sample_modes = {"CUT": 0, "ONCE": 1, "LOOP": 2, "STRETCH": 3}
 
     kit_head = [
-        '<?xml version=\"1.0\" encoding=\"UTF-8\"?>',
-        '<kit',
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        "<kit",
         '\tfirmwareVersion="3.0.4"',
         '\tearliestCompatibleFirmware="3.0.0"',
         '\tlpfMode="24dB"',
         '\tmodFXType="flanger"',
         '\tmodFXCurrentParam="feedback"',
         '\tcurrentFilterType="lpf">',
-        '\t<delay',
+        "\t<delay",
         '\t\tpingPong="1"',
         '\t\tanalog="0"',
         '\t\tsyncLevel="7" />',
-        '\t<compressor',
+        "\t<compressor",
         '\t\tsyncLevel="6"',
         '\t\tattack="327244"',
         '\t\trelease="936" />',
-        '\t<defaultParams',
+        "\t<defaultParams",
         '\t\treverbAmount="0x80000000"',
         '\t\tvolume="0x3504F334"',
         '\t\tpan="0x00000000"',
@@ -159,35 +154,46 @@ def process_file(out_file):
         '\t\tbitCrush="0x80000000"',
         '\t\tmodFXOffset="0x00000000"',
         '\t\tmodFXFeedback="0x80000000">',
-        '\t\t<delay',
+        "\t\t<delay",
         '\t\t\trate="0x00000000"',
         '\t\t\tfeedback="0x80000000" />',
-        '\t\t<lpf',
+        "\t\t<lpf",
         '\t\t\tfrequency="0x7FFFFFFF"',
         '\t\t\tresonance="0x80000000" />',
-        '\t\t<hpf',
+        "\t\t<hpf",
         '\t\t\tfrequency="0x80000000"',
         '\t\t\tresonance="0x80000000" />',
-        '\t\t<equalizer',
+        "\t\t<equalizer",
         '\t\t\tbass="0x00000000"',
         '\t\t\ttreble="0x00000000"',
         '\t\t\tbassFrequency="0x00000000"',
         '\t\t\ttrebleFrequency="0x00000000" />',
-        '\t</defaultParams>',
-        '\t<soundSources>'
+        "\t</defaultParams>",
+        "\t<soundSources>",
     ]
 
     kit_tail = [
-
-        '\t</soundSources>',
-        '\t<selectedDrumIndex>0</selectedDrumIndex>',
-        '</kit>'
+        "\t</soundSources>",
+        "\t<selectedDrumIndex>0</selectedDrumIndex>",
+        "</kit>",
     ]
 
-    method_list = ['default', 'energy', 'hfc', 'complex', 'phase', 'specdiff', 'kl', 'mkl', 'specflux', 'divide']
+    method_list = [
+        "default",
+        "energy",
+        "hfc",
+        "complex",
+        "phase",
+        "specdiff",
+        "kl",
+        "mkl",
+        "specflux",
+        "divide",
+    ]
 
     if len(sys.argv) < 2:
-        print("""
+        print(
+            """
         
 DELUGE SAMPLE 'SLICER' V0.30 by Neil Baldwin - updated 30/05/20
 ---------------------------------------------------------------
@@ -231,53 +237,54 @@ OPTIONS TO OUTPUT WHOLE SAMPLE AS EXTRA SLICE:
 --sourceMode    CUT, ONCE, LOOP or STRETCH
 
         
-        """)
+        """
+        )
         sys.exit(1)
 
     #
     # Process command-line arguments
     #
     for arg in range(len(sys.argv)):
-        if sys.argv[arg] == '--input':
+        if sys.argv[arg] == "--input":
             filename = sys.argv[arg + 1]
 
-        if sys.argv[arg] == '--output':
+        if sys.argv[arg] == "--output":
             kitname = sys.argv[arg + 1]
-        if sys.argv[arg] == '--sample':
+        if sys.argv[arg] == "--sample":
             samplemode_name = str.upper(sys.argv[arg + 1])
             if samplemode_name in sample_modes:
                 samplemode = sample_modes[samplemode_name]
             else:
                 samplemode = 0
-                samplemode_name = 'CUT'
-        if sys.argv[arg] == '--method':
+                samplemode_name = "CUT"
+        if sys.argv[arg] == "--method":
             onset_method = str.lower(sys.argv[arg + 1])
 
         if onset_method in method_list:
             onset_method = onset_method
         else:
-            onset_method = 'hfc'
+            onset_method = "hfc"
 
-        if sys.argv[arg] == '--divide':
+        if sys.argv[arg] == "--divide":
             onset_division = sys.argv[arg + 1]
-        if sys.argv[arg] == '--silence':
+        if sys.argv[arg] == "--silence":
             silence = sys.argv[arg + 1]
-        if sys.argv[arg] == '--threshold':
+        if sys.argv[arg] == "--threshold":
             threshold = sys.argv[arg + 1]
 
-        if sys.argv[arg] == '--sourceSlice':
+        if sys.argv[arg] == "--sourceSlice":
             sourceslice = str.lower(sys.argv[arg + 1])
-            if sourceslice != 'first':
-                sourceslice = 'last'
-        if sys.argv[arg] == '--sourceMode':
+            if sourceslice != "first":
+                sourceslice = "last"
+        if sys.argv[arg] == "--sourceMode":
             sourcemode_name = str.upper(sys.argv[arg + 1])
             if sourcemode_name in sample_modes:
                 sourcemode = sample_modes[sourcemode_name]
             else:
                 sourcemode = 0
-                sourcemode_name = 'CUT'
+                sourcemode_name = "CUT"
 
-    if sourcemode_name == 'NONE':
+    if sourcemode_name == "NONE":
         sourcemode = samplemode
         sourcemode_name = samplemode_name
 
@@ -353,29 +360,36 @@ OPTIONS TO OUTPUT WHOLE SAMPLE AS EXTRA SLICE:
     # OUTPUT LOOP
     #
     slicecount = 0
-    if sourceslice == 'first':
+    if sourceslice == "first":
         start = sourcestart
         end = sourceend
         print("Slice {}:  {} - {}".format(slicecount, start, end))
-        write_sound(start, end, sourcemode, filename, out_file)
+        write_sound(slicecount, start, end, sourcemode, filename, out_file)
         slicecount += 1
 
     for aslice in range(len(onsets) - 1):
         start = int(onsets[aslice])
         end = int(onsets[aslice + 1] - 1)
         print("Slice {}:  {} - {}".format(slicecount, start, end))
-        write_sound(start, end, samplemode, filename, out_file)
+        write_sound(slicecount, start, end, samplemode, filename, out_file)
         slicecount += 1
 
-    if sourceslice == 'last':
+    if sourceslice == "last":
         print("LAST SLICE!!!")
         start = sourcestart
         end = sourceend
         print("Slice {}:  {} - {}".format(slicecount, start, end))
-        write_sound(start, end, sourcemode, filename, out_file)
+        write_sound(slicecount, start, end, sourcemode, filename, out_file)
         slicecount += 1
 
-    print("\nTotal slices written to '" + kitname + "' from sample '" + filename + "': " + str(slicecount))
+    print(
+        "\nTotal slices written to '"
+        + kitname
+        + "' from sample '"
+        + filename
+        + "': "
+        + str(slicecount)
+    )
     print("\n")
 
     for line in kit_tail:
@@ -389,27 +403,27 @@ OPTIONS TO OUTPUT WHOLE SAMPLE AS EXTRA SLICE:
 #
 # Function: write individual sound (kit lane) to output file
 #
-def write_sound(start, end, mode, file, output):
-    output.write('\t\t<sound\n')
-    output.write('\t\t\tname="SL' + str(slice) + '"\n')
+def write_sound(slice_number, start, end, mode, file, output):
+    output.write("\t\t<sound\n")
+    output.write('\t\t\tname="SL' + str(slice_number) + '"\n')
     output.write('\t\t\tpolyphonic="audio"\n')
     output.write('\t\t\tvoicePriority="1"\n')
     output.write('\t\t\tmode="subtractive"\n')
     output.write('\t\t\tlpfMode="24dB"\n')
     output.write('\t\t\tmodFXType="none">\n')
-    output.write('\t\t\t<osc1\n')
+    output.write("\t\t\t<osc1\n")
     output.write('\t\t\t\ttype="sample"\n')
     output.write('\t\t\t\tloopMode="' + str(mode) + '"\n')
     output.write('\t\t\t\treversed="0"\n')
     output.write('\t\t\t\ttimeStretchEnable="0"\n')
     output.write('\t\t\t\ttimeStretchAmount="0"\n')
-    output.write('\t\t\t\tfileName="' + file[file.find("SAMPLES"):] + '">\n')
-    output.write('\t\t\t\t<zone\n')
+    output.write('\t\t\t\tfileName="' + file[file.find("SAMPLES") :] + '">\n')
+    output.write("\t\t\t\t<zone\n")
     output.write('\t\t\t\t\tstartSamplePos="' + str(start) + '"\n')
     output.write('\t\t\t\t\tendSamplePos="' + str(end) + '" />\n')
     output.write("\t\t\t</osc1>\n")
 
-    output.write('\t\t\t<osc2\n')
+    output.write("\t\t\t<osc2\n")
     output.write('\t\t\t\ttype="sample"\n')
     output.write('\t\t\t\tloopMode="0"\n')
     output.write('\t\t\t\treversed="0"\n')
@@ -425,5 +439,5 @@ def write_sound(start, end, mode, file, output):
         output.write("\n")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
